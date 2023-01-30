@@ -33,15 +33,15 @@ async function sendDiscordNotification(message) {
     const firstNotification = 11;
     const lastNotification = 17;
 
-    if(day > 0 && day < 7){
+    if(day > 1 && day < 7){
       if(hour === firstNotification) {
         sendDiscordNotification(`**Lembrete!!!**\nAdicionar horas trabalhadas nos cards!\n\nObrigado!`)
       } else if(hour === lastNotification){
         sendDiscordNotification(`**Lembrete!!!**\nAdicionar horas trabalhadas nos cards!\n\nObrigado!`)
-      } else {
-        sendDiscordNotification("Teste")
       }
     }
+
+    day === 2 && hour === 8 ? sendDiscordNotification(`Uma boa semana a todos!\nPra cima time!!!`) : day === 6 && hour === 18 ? sendDiscordNotification(`Um bom fim de semana a todos!`) : ""
   }
 
   setInterval(notifications, 3600000);
